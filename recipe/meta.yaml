@@ -1,19 +1,19 @@
 {% set name = "glom" %}
-{% set version = "19.10.0" %}
+{% set version = "20.5.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: c8a50cb9fcf0c84807836c6a73cf61285557834b9050d7bde7732b936aceb7dd
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e753d2e8d16647ffcd9f0f99ac85d3db523ff0a1f097cf0a154a60702bca7e42
 
 build:
   number: 0
   entry_points:
     - glom = glom.cli:console_main
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
   noarch: python
 
 requirements:
@@ -34,11 +34,11 @@ test:
     - glom --help
 
 about:
-  home: "https://github.com/mahmoud/glom"
-  license: "BSD-3-Clause"
-  license_family: "BSD"
-  license_file: "LICENSE"
-  summary: "A declarative object transformer and formatter, for conglomerating nested data."
+  home: https://github.com/mahmoud/glom
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: A declarative object transformer and formatter, for conglomerating nested data.
 
 extra:
   recipe-maintainers:
