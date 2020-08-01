@@ -5,7 +5,7 @@ Home: https://github.com/mahmoud/glom
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A declarative object transformer and formatter, for conglomerating nested data.
 
