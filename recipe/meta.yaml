@@ -34,7 +34,7 @@ test:
   commands:
     - pip check
     - glom --help
-    - pytest -vvv --capture=tee-sys glom/test
+    - pytest -vvv glom/test
   requires:
     - pip
     - pytest ==4.1.1
