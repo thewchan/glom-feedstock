@@ -28,13 +28,13 @@ requirements:
 
 test:
   source_files:
-    - glom/tests
+    - glom/test
   imports:
     - glom
   commands:
     - pip check
     - glom --help
-    - pytest -vvv --capture=tee-sys tests
+    - pytest -vvv --capture=tee-sys test
   requires:
     - pip
     - pytest
