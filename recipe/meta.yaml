@@ -38,6 +38,7 @@ test:
   requires:
     - pip
     - pytest
+    - pyyaml
 
 about:
   home: https://github.com/mahmoud/glom
