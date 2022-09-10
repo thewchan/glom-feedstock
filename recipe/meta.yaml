@@ -1,5 +1,5 @@
 {% set name = "glom" %}
-{% set version = "20.11.0" %}
+{% set version = "22.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 54051072bccc9cdb3ebbd8af0559195137a61d308f04bff19678e4b61350eb12
+  sha256: 1510c6587a8f9c64a246641b70033cbc5ebde99f02ad245693678038e821aeb5
 
 build:
   number: 0
@@ -18,20 +18,26 @@ build:
 
 requirements:
   host:
-    - python
     - pip
+    - python >=3.6
   run:
     - attrs
-    - boltons
-    - face
-    - python
+    - boltons >=19.3.0
+    - face >=20.1.0
+    - python >=3.6
 
 test:
+  source_files:
+    - glom/tests
   imports:
     - glom
-    - glom.test
   commands:
+    - pip check
     - glom --help
+    - pytest -vvv --capture=tee-sys tests
+  requires:
+    - pip
+    - pytest
 
 about:
   home: https://github.com/mahmoud/glom
@@ -43,3 +49,4 @@ about:
 extra:
   recipe-maintainers:
     - CJ-Wright
+    - thewchan
