@@ -1,5 +1,5 @@
 {% set name = "glom" %}
-{% set version = "22.1.0" %}
+{% set version = "23.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1510c6587a8f9c64a246641b70033cbc5ebde99f02ad245693678038e821aeb5
+  sha256: b7442309e013feb6feab206197abf8aec32835ec709d8a92a8514322f64c0eff
 
 build:
   number: 0
