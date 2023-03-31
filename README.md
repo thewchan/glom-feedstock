@@ -1,11 +1,11 @@
-About glom
-==========
+About glom-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/glom-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/mahmoud/glom
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/glom-feedstock/blob/main/LICENSE.txt)
 
 Summary: A declarative object transformer and formatter, for conglomerating nested data.
 
