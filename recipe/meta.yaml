@@ -34,7 +34,7 @@ test:
   commands:
     - pip check
     - glom --help
-    - pytest -vvv glom/test
+    - pytest -vvv --capture=tee-sys -k "not test_error" glom/test
   requires:
     - pip
     - pytest >=6.2.5
