@@ -1,5 +1,5 @@
 {% set name = "glom" %}
-{% set version = "23.3.0" %}
+{% set version = "23.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 031699280fa4666048e43d2eab68be1044ffcd487ab74acb792de2eeb0bc2515
+  sha256: 8f7877de06a7d4f2ecca9608678258300498aaf02dc3b1eea971677f1dce86e3
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - glom = glom.cli:console_main
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
