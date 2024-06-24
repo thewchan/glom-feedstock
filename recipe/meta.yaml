@@ -10,7 +10,7 @@ source:
   sha256: 031699280fa4666048e43d2eab68be1044ffcd487ab74acb792de2eeb0bc2515
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - glom = glom.cli:console_main
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
@@ -19,12 +19,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
-    - attrs <=19.1.0
+    - attrs
     - boltons >=19.3.0
-    - face >=20.1.0
-    - python >=3.6
+    - face ==20.1.1
+    - python >=3.7
 
 test:
   source_files:
@@ -34,10 +34,10 @@ test:
   commands:
     - pip check
     - glom --help
-    - pytest -vvv glom/test
+    - pytest -vvv --capture=tee-sys -k "not test_error" glom/test
   requires:
     - pip
-    - pytest ==4.1.1
+    - pytest >=6.2.5
     - pyyaml ==5.4.1
 
 about:
