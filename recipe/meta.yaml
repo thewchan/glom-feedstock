@@ -1,13 +1,13 @@
 {% set name = "glom" %}
-{% set version = "23.5.0" %}
+{% set version = "24.11.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 06af5e3486aacc59382ba34e53ebeabd7a9345d78f7dbcbee26f03baa4b83bac
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 4325f96759a912044af7b6c6bd0dba44ad8c1eb6038aab057329661d2021bb27
 
 build:
   number: 0
@@ -19,12 +19,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - attrs
     - boltons >=19.3.0
-    - face ==20.1.1
-    - python >=3.7
+    - face >=20.1.1
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -39,6 +39,7 @@ test:
     - pip
     - pytest >=6.2.5
     - pyyaml ==5.4.1
+    - python {{ python_min }}
 
 about:
   home: https://github.com/mahmoud/glom
